@@ -11,6 +11,7 @@ Source0:	http://downloads.mozdev.org/themes/%{_realname}%{fver}.jar
 Source1:	%{_realname}-installed-chrome.txt
 URL:		http://www0.mozdev.org/themes/skins/lcarstrek.html
 BuildRequires:	unzip
+BuildArch:	noarch
 Requires:	mozilla >= 1.0-7
 BuildRoot:	%{tmpdir}/%{_realname}-%{version}-root-%(id -u -n)
 
@@ -32,16 +33,14 @@ install -d $RPM_BUILD_ROOT%{_chromedir}
 unzip %{SOURCE0} -d $RPM_BUILD_ROOT%{_chromedir}
 install %{SOURCE1} $RPM_BUILD_ROOT%{_chromedir}
 
-%clean
-rm -rf $RPM_BUILD_ROOT
-
-%post
-cd %{_chromedir}
-cat *-installed-chrome.txt >installed-chrome.txt
+%post 
+cat %{_chromedir}/*-installed-chrome.txt >%{_chromedir}/installed-chrome.txt
 
 %postun
-cd %{_chromedir}
-cat *-installed-chrome.txt >installed-chrome.txt
+cat %{_chromedir}/*-installed-chrome.txt >%{_chromedir}/installed-chrome.txt
+
+%clean 
+rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)

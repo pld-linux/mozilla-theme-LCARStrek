@@ -1,0 +1,7 @@
+skin,install,url,jar:resource:/chrome/LCARStrek.jar!/
+skin,install,url,jar:resource:/chrome/LCARStrek.jar!/global/
+skin,install,url,jar:resource:/chrome/LCARStrek.jar!/communicator/
+skin,install,url,jar:resource:/chrome/LCARStrek.jar!/editor/
+skin,install,url,jar:resource:/chrome/LCARStrek.jar!/messenger/
+skin,install,url,jar:resource:/chrome/LCARStrek.jar!/navigator/
+skin,install,url,jar:resource:/chrome/LCARStrek.jar!/chatzilla/

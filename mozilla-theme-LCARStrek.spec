@@ -9,6 +9,7 @@ Epoch:		1
 License:	GPL
 Group:		X11/Applications/Networking
 Source0:	http://www.hirsch.sth.ac.at/~robert/kairo.at/dl/%{_realname}%{fver}.xpi
+# Source0-md5:	25b84645dae8563c5bbdbaaa4e4f1e0d
 Source1:	%{_realname}-installed-chrome.txt
 URL:		http://www.kairo.at/download/mozskins.html
 BuildRequires:	unzip

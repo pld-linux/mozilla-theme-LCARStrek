@@ -2,14 +2,15 @@ Summary:	Theme based on StarTrek LCARS console
 Summary(pl):	Temat bazuj±cy na konsoli komputerów z serialu StarTrek
 Name:		mozilla-theme-LCARStrek
 %define		_realname	LCARStrek
-Version:	1.0.rc2
+Version:	1.0
 %define	fver	%(echo %{version} | tr -d .)
-Release:	2
+Release:	1
+Epoch:		1
 License:	GPL
 Group:		X11/Applications/Networking
-Source0:	http://downloads.mozdev.org/themes/%{_realname}%{fver}.jar
+Source0:	http://www.hirsch.sth.ac.at/~robert/kairo.at/dl/%{_realname}%{fver}.xpi
 Source1:	%{_realname}-installed-chrome.txt
-URL:		http://www0.mozdev.org/themes/skins/lcarstrek.html
+URL:		http://www.kairo.at/download/mozskins.html
 BuildRequires:	unzip
 BuildArch:	noarch
 Requires:	mozilla >= 1.0-7

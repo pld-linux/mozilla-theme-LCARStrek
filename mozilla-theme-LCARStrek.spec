@@ -1,18 +1,21 @@
 Summary:	Theme based on StarTrek LCARS console
-Summary(pl):	Temat bazuj±cy na konsoli komputerów z serialu StarTrek
+Summary(pl):	Motyw bazuj±cy na konsoli komputerów z serialu StarTrek
 Name:		mozilla-theme-LCARStrek
 %define		_realname	LCARStrek
-Version:	1.0.rc2
+Version:	1.3
 %define	fver	%(echo %{version} | tr -d .)
-Release:	2
+Release:	1
+Epoch:		1
 License:	GPL
 Group:		X11/Applications/Networking
-Source0:	http://downloads.mozdev.org/themes/%{_realname}%{fver}.jar
+Source0:	http://www.hirsch.sth.ac.at/~robert/kairo.at/dl/%{_realname}%{fver}.xpi
+# Source0-md5:	22de9d73178df965d33e4057106d1e30
 Source1:	%{_realname}-installed-chrome.txt
-URL:		http://www0.mozdev.org/themes/skins/lcarstrek.html
+URL:		http://www.kairo.at/download/mozskins.html
 BuildRequires:	unzip
+Requires(post,postun):	textutils
+Requires:	mozilla >= 1.2.1
 BuildArch:	noarch
-Requires:	mozilla >= 1.0-7
 BuildRoot:	%{tmpdir}/%{_realname}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -22,7 +25,7 @@ BuildRoot:	%{tmpdir}/%{_realname}-%{version}-root-%(id -u -n)
 Theme based on StarTrek LCARS console.
 
 %description -l pl
-Temat bazuj±cy na wygl±dzie konsol komputerów z serialu StarTrek.
+Motyw bazuj±cy na wygl±dzie konsol komputerów z serialu StarTrek.
 
 %prep
 
@@ -33,14 +36,16 @@ install -d $RPM_BUILD_ROOT%{_chromedir}
 unzip %{SOURCE0} -d $RPM_BUILD_ROOT%{_chromedir}
 install %{SOURCE1} $RPM_BUILD_ROOT%{_chromedir}
 
-%post 
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%post
+umask 022
 cat %{_chromedir}/*-installed-chrome.txt >%{_chromedir}/installed-chrome.txt
 
 %postun
+umask 022
 cat %{_chromedir}/*-installed-chrome.txt >%{_chromedir}/installed-chrome.txt
-
-%clean 
-rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)

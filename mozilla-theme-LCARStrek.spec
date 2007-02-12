@@ -1,5 +1,5 @@
 Summary:	Theme based on StarTrek LCARS console
-Summary(pl):	Motyw bazuj±cy na konsoli komputerów z serialu StarTrek
+Summary(pl.UTF-8):   Motyw bazujÄ…cy na konsoli komputerÃ³w z serialu StarTrek
 Name:		mozilla-theme-LCARStrek
 %define		_realname	LCARStrek
 Version:	1.7
@@ -23,8 +23,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Theme based on StarTrek LCARS console.
 
-%description -l pl
-Motyw bazuj±cy na wygl±dzie konsol komputerów z serialu StarTrek.
+%description -l pl.UTF-8
+Motyw bazujÄ…cy na wyglÄ…dzie konsol komputerÃ³w z serialu StarTrek.
 
 %prep
 
